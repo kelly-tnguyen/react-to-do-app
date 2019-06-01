@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { runInThisContext } from 'vm';
+// import { runInThisContext } from 'vm';
 
 class App extends Component {
   constructor(props){
@@ -23,7 +23,8 @@ handleSumbit=()=>{
 
 renderList=()=>{
     return this.state.list.map((item)=>{
-      return <p>{item}</p>
+      return <li>{item}
+       </li>
     })
   }
 
@@ -31,9 +32,18 @@ renderList=()=>{
   render(){
     return (
       <div>
-        <input type="text" onChange={this.handleUserInput} value={this.state.inputValue}/>
-        <button onClick={this.handleSumbit}>Add</button>
-          {this.renderList()}
+        <h1>To-Do List</h1>
+        <input 
+        type="text" 
+        onChange={this.handleUserInput} 
+        value={this.state.inputValue}/>
+
+        <button 
+        onClick={this.handleSumbit}>Add
+        </button>
+        
+        {this.renderList()}
+
       </div>
     );
   }
